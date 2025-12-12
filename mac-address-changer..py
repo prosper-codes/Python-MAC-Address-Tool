@@ -31,3 +31,5 @@ def mac_changer(interface, new_mac_add):
 options = get_arguments()
 
 mac_changer(options.interface, options.new_mac_add)
+ifconf_output = subprocess.check_output(["ifconfig", options.interface])
+print(ifconf_output)
